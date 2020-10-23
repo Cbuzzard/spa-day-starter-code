@@ -1,19 +1,18 @@
-package org.launchcode.spaday.controllers;
+package org.launchcode.spaday.controllers.s3;
 
-import org.launchcode.spaday.models.Client;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.launchcode.spaday.models.s3.Client;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import java.util.ArrayList;
 
 
 @Controller
-public class SpaDayController {
+@RequestMapping("s3")
+public class SpaDayControllerS3 {
 
     @GetMapping
     public String displayClientForm (Model model) {
-        return "serviceSelection";
+        return "s3/serviceSelection";
     }
 
     @PostMapping
@@ -22,6 +21,6 @@ public class SpaDayController {
         newClient.setAppropriateFacials(skintype);
         model.addAttribute("client" , newClient);
 
-        return "menu";
+        return "s3/menu";
     }
 }

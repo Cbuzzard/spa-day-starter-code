@@ -1,4 +1,4 @@
-package org.launchcode.spaday.models;
+package org.launchcode.spaday.models.s3;
 
 import javax.validation.constraints.*;
 

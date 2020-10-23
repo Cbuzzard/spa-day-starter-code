@@ -2,12 +2,12 @@
 <html lang="en" xmlns:th = "http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
-    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <link href="../static/css/styles-s3.css" th:href="@{/css/styles-s3.css}" rel="stylesheet" />
     <title>Welcome</title>
 </head>
 <body>
     <p th:text = "'Welcome ' + ${user.username} + '!'"></p>
-    <a th:href="@{/}">
+    <a th:href="@{/s3}">
         Select your spa services here
     </a>
 </body>

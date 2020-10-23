@@ -1,6 +1,6 @@
-package org.launchcode.spaday.controllers;
+package org.launchcode.spaday.controllers.s3;
 
-import org.launchcode.spaday.models.User;
+import org.launchcode.spaday.models.s3.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("user")
+@RequestMapping("s3/user")
 public class UserController {
 
     @GetMapping("/add")
     public String displayAddUserForm(Model model) {
         model.addAttribute(new User());
-        return "user/add";
+        return "s3/user/add";
     }
 
     @PostMapping
@@ -24,12 +24,9 @@ public class UserController {
         model.addAttribute("username", user.getUsername());
         model.addAttribute("email", user.getEmail());
         if (errors.hasErrors()) {
-            return "user/add";
+            return "s3/user/add";
         }
-//        if (user.getPassword().equals(user.getVerify())) {
-//           return "user/index";
-//        }
-        return "user/index";
+        return "s3/user/index";
     }
 
 
