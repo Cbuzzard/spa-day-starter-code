@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Spa Menu</title>
-    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <link href="../static/css/styles-s2.css" th:href="@{/css/styles-s2.css}" rel="stylesheet" />
 </head>
 <body>
 <h1>My Super Fancy Spa</h1>
@@ -21,10 +21,10 @@
     </th:block>
     <h3 th:text = "${manipedi}">manipedi</h3>
     <div th:if = '${manipedi.equals("manicure")}'>
-        <p th:replace = "fragments :: manicureDescription" ></p>
+        <p th:replace = "s2/fragments :: manicureDescription" ></p>
     </div>
     <div th:unless = '${manipedi.equals("manicure")}'>
-        <p th:replace = "fragments :: pedicureDescription"></p>
+        <p th:replace = "s2/fragments :: pedicureDescription"></p>
     </div>
 </div>
 </body>

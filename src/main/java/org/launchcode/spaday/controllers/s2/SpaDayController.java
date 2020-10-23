@@ -1,4 +1,4 @@
-package org.launchcode.spaday.controllers;
+package org.launchcode.spaday.controllers.s2;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 
 @Controller
+@RequestMapping("s2")
 public class SpaDayController {
 
     public boolean checkSkinType(String skinType, String facialType) {
@@ -43,8 +44,8 @@ public class SpaDayController {
         }
     }
 
-    @GetMapping(value="")
     @ResponseBody
+    @RequestMapping
     public String customerForm () {
         String html = "<form method = 'post'>" +
                 "Name: <br>" +
@@ -87,6 +88,6 @@ public class SpaDayController {
         }
         model.addAttribute("appropriateFacials", appropriateFacials);
 
-        return "menu";
+        return "s2/menu";
     }
 }
